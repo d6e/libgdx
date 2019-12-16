@@ -53,6 +53,7 @@ public final class LwjglNativesLoader {
 		try {
 			if (isWindows) {
 				nativesDir = loader.extractFile(is64Bit ? "lwjgl64.dll" : "lwjgl.dll", null).getParentFile();
+				System.out.println("nativesDir="+nativesDir.toString());
 				if (!LwjglApplicationConfiguration.disableAudio)
 					loader.extractFileTo(is64Bit ? "OpenAL64.dll" : "OpenAL32.dll", nativesDir);
 			} else if (isMac) {
